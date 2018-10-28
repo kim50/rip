@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+	<style>
+	body {background: black;
+	font-family: 'Black Han Sans', sans-serif;}
+	h1 {font-family: 'VT323', monospace;
+		color: white;
+		text-align: center;
+		margin-bottom: 10px;
+		font-size: 100px;}
+
+	h2 {font-family: 'VT323', monospace;
+		color: white;
+		position: absolute;
+		top: 430px;
+		left: 30px;}
+
+	h3 {font-family: 'VT323', monospace;
+		color: white;
+		position: absolute;
+		top: 730px;
+		left: 30px;}
+
+	#frame {width: 350px;
+			margin: auto;
+			display: block;}
+
+	#idea {width: 200px;
+			position: absolute;
+			left: 620px;
+			top: 400px;}
+
+	#bomb {width: 200px;
+			position: absolute;
+			left: 620px;
+			top: 380px;}
+
+	#text {color: white;
+			font-size: 20px;
+			position: absolute;
+			top: 10px;
+			right: 150px;
+			}
+
+	#text2 {color: white;
+			position: absolute;
+			top: 160px;
+			left: 30px;
+			font-size: 20px;}
+
+	#text3 {color: white;
+			position: absolute;
+			top: 210px;
+			left: 100px;
+			font-size: 25px;}	
+
+	#text4 {color: white;
+			position: absolute;
+			top: 260px;
+			left: 10px;
+			font-size: 28px;}	
+
+	#text5 {color: white;
+			position: absolute;
+			top: 310px;
+			left: 180px;
+			font-size: 20px;}
+
+	#text6 {color: white;
+			position: absolute;
+			top: 420px;
+			right: 30px;
+			font-size: 30px;}
+
+	#text7 {color: white;
+			position: absolute;
+			top: 490px;
+			right: 30px;
+			font-size: 25px;}
+
+	#text8 {color: white;
+			position: absolute;
+			top: 540px;
+			right: 150px;
+			font-size: 20px;}	
+
+	#star {width: 500px;
+			height: 300px;
+			position: absolute;
+			top: 100px;
+			opacity: 0.3;}
+
+	#star2 {width: 530px;
+			height: 330px;
+			position: absolute;
+			top: 350px;
+			right: 30px;
+			opacity: 0.3;}
+
+ 	#flower {width: 300px;
+ 			position: absolute;
+ 			bottom: 30px;
+ 			}
+
+  	#flower2 {width: 300px;
+ 			position: absolute;
+ 			bottom: 30px;
+ 			left: 120px;
+ 			}
+
+  	#flower3 {width: 300px;
+ 			position: absolute;
+ 			bottom: 30px;
+ 			left: 240px;
+ 			}
+
+ 	@media all and (max-width: 600px) { 
+ 		header{width:inherit; height:300px; }
+ 		.dimmer{height:300px;}
+ 		/*모바일 헤더는 높이를 300px로, 폭은 inherit로 초기값으로 재설정했습니다. 모든 CSS에서 inherit는 값을 주지 않았을 때의 값입니다*/
+
+ 		.header-texts{top:100px;}
+ 		.header-texts h1{ font-size:2em; }
+ 		/* 모바일 텍스트는 크기를 조절합니다 */
+
+ 		section{width:inherit; margin-top: 1em;}
+ 		.col3{ width: inherit; margin:0; margin-bottom: 2em; }
+ 		.no-padding { padding:1.65%; }
+
+	}
+	</style>
+</head>
+<body>
+	<h1>R.I.P</h1>
+	<h2>click . . . ▼</h2>
+	<h3>Money -> K bank 100-124-970081 . . . </h3>
+	<img src="star.gif" id="star">
+	<img src="star.gif" id="star2">
+	<img src="idea.gif" id="idea">
+	<img src="bomb.gif" id="bomb">
+	<img src="frame.png" id="frame">
+
+	<audio id="soundMusic">
+		<source src="sad.mp3" type="audio/mpeg">
+	</audio>
+
+	<img src="flower.png" id="flower">
+	<img src="flower.png" id="flower2">
+	<img src="flower.png" id="flower3">
+	<div id="text"></div>
+	<div id="text2"></div>
+	<div id="text3"></div>
+	<div id="text4"></div>
+	<div id="text5"></div>
+	<div id="text6"></div>
+	<div id="text7"></div>
+	<div id="text8"></div>
+
+		<script type="text/javascript">
+
+		var toggle = "off";
+
+		flower.onclick = function(){
+			if(toggle == "off"){
+				flower.setAttribute("src","flower.png");
+				toggle = "on";
+				soundMusic.play()	
+			}else {
+				flower.setAttribute("src","flower.png" );
+				toggle = "off";
+				soundMusic.pause()	
+			}	
+		}
+
+
+
+		var i=0,text;
+			text = "어서 오세요 . . . 이 곳은 너무 많은 과목에 너무 많은 아이디어를 쏟아 . . . 터져버려 한 줌에 재가 되어버린 저의 나약한 뇌를 추모하는 공간입니다 . . ."
+
+		function typing() {
+			if(i<text.length){
+				document.getElementById("text").innerHTML += text.charAt(i);
+				i++;
+				setTimeout(typing,70);
+			}
+		}
+		typing();
+
+
+		var k=0,text2;
+		text2 =  "나는 너와 함께 한 순간들 모두 다 기억해 . . ."
+
+		function typing2() {
+			if(k<text2.length){
+				document.getElementById("text2").innerHTML += text2.charAt(k);
+				k++;
+				setTimeout(typing2,100);
+			}
+		}
+		typing2();
+
+		var p=0,text3;
+		text3 = "시간을 되돌릴 수 있다면 . . ."
+
+		function typing3() {
+			if(p<text3.length){
+				document.getElementById("text3").innerHTML += text3.charAt(p);
+				p++;
+				setTimeout(typing3,130);
+			}
+		}
+		typing3();
+
+		var s=0,text4;
+		text4 = "자바스크립트를 배우기 전으로 돌아간다면 . . ."
+
+		function typing4() {
+			if(s<text4.length){
+				document.getElementById("text4").innerHTML += text4.charAt(s);
+				s++;
+				setTimeout(typing4,200);
+			}
+		}
+		typing4();
+
+		var r=0,text5;
+		text5 = "널 다시 볼 수 있을까 ? . . . "
+
+		function typing5() {
+			if(r<text5.length){
+				document.getElementById("text5").innerHTML += text5.charAt(r);
+				r++;
+				setTimeout(typing5,100);
+			}
+		}
+		typing5();
+
+		var d=0,text6;
+
+		text6 =   "고마웠어 . . . 내 뇌야 . . . 다음생엔 꼭 . . ."
+
+		function typing6() {
+			if(d<text6.length){
+				document.getElementById("text6").innerHTML += text6.charAt(d);
+				d++;
+				setTimeout(typing6,120);
+			}
+		}
+		typing6();
+
+
+		var a=0,text7;
+
+		text7 = "나 말고 . . 똑똑한 주인 만나서 . . . "
+
+		function typing7() {
+			if(a<text7.length){
+				document.getElementById("text7").innerHTML += text7.charAt(a);
+				a++;
+				setTimeout(typing7,160);
+			}
+		}
+		typing7();
+
+
+		var w=0,text8;
+
+		text8 = "행복 하렴 . . ."
+
+		function typing8() {
+			if(w<text8.length){
+				document.getElementById("text8").innerHTML += text8.charAt(w);
+				w++;
+				setTimeout(typing8,180);
+			}
+		}
+		typing8();
+
+		
+
+	</script>
+</body>
+</html>
